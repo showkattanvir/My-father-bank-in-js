@@ -5,11 +5,11 @@
 // const fiveDuble = doubleIt (5);
 // const sevenDuble = doubleIt (7);
 function getInputValue(inputId) {
-    const depositInput = document.getElementById(inputId);
-    const depositAmountText = depositInput.value;
-    const depositAmount = parseFloat(depositAmountText);
-    depositInput.value = '';
-    return depositAmount;
+    const inputField = document.getElementById(inputId);
+    const inputAmountText = inputField.value;
+    const amountValue = parseFloat(inputAmountText);
+    inputField.value = '';
+    return amountValue;
 }
 
 
