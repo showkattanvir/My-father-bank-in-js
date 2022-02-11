@@ -11,6 +11,13 @@ function getInputValue(inputId) {
     inputField.value = '';
     return amountValue;
 }
+function updateTotalField(depositAmount) {
+    // const depositAmount = getInputValue("deposit-input");
+    const depositTotal = document.getElementById("deposit-total");
+    const depositTotalText = depositTotal.innerText;
+    const priviousDepositTotal = parseFloat(depositTotalText);//ati text ka sonka ta ropan torito koraca//
+    depositTotal.innerText = priviousDepositTotal + depositAmount;
+}
 
 
 
@@ -20,10 +27,11 @@ document.getElementById("deposit-button").addEventListener('click', function () 
     // const depositAmountText = depositInput.value;//input tai acana value dici//
     // const depositAmount = parseFloat(depositAmountText);//ati text ka sonka ta ropan torito koraca//
     const depositAmount = getInputValue("deposit-input");
-    const depositTotal = document.getElementById("deposit-total");
-    const depositTotalText = depositTotal.innerText;
-    const priviousDepositTotal = parseFloat(depositTotalText);//ati text ka sonka ta ropan torito koraca//
-    depositTotal.innerText = priviousDepositTotal + depositAmount;
+    // const depositTotal = document.getElementById("deposit-total");
+    // const depositTotalText = depositTotal.innerText;
+    // const priviousDepositTotal = parseFloat(depositTotalText);//ati text ka sonka ta ropan torito koraca//
+    // depositTotal.innerText = priviousDepositTotal + depositAmount;
+    updateTotalField(depositAmount);
     // update balance //
     const balanceTotal = document.getElementById("balance-total");
     const balanceTotalText = balanceTotal.innerText;
