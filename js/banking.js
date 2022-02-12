@@ -11,9 +11,9 @@ function getInputValue(inputId) {
     inputField.value = '';
     return amountValue;
 }
-function updateTotalField(depositAmount) {
+function updateTotalField(totalFieldId, depositAmount) {
     // const depositAmount = getInputValue("deposit-input");
-    const depositTotal = document.getElementById("deposit-total");
+    const depositTotal = document.getElementById(totalFieldId);
     const depositTotalText = depositTotal.innerText;
     const priviousDepositTotal = parseFloat(depositTotalText);//ati text ka sonka ta ropan torito koraca//
     depositTotal.innerText = priviousDepositTotal + depositAmount;
@@ -31,7 +31,7 @@ document.getElementById("deposit-button").addEventListener('click', function () 
     // const depositTotalText = depositTotal.innerText;
     // const priviousDepositTotal = parseFloat(depositTotalText);//ati text ka sonka ta ropan torito koraca//
     // depositTotal.innerText = priviousDepositTotal + depositAmount;
-    updateTotalField(depositAmount);
+    updateTotalField("deposit-total", depositAmount);
     // update balance //
     const balanceTotal = document.getElementById("balance-total");
     const balanceTotalText = balanceTotal.innerText;
@@ -44,10 +44,12 @@ document.getElementById("withdraw-button").addEventListener("click", function ()
     // const withdrawAmountText = withdrawInput.value;
     // const withdrawAmount = parseFloat(withdrawAmountText);
     const withdrawAmount = getInputValue("withdraw-input")
-    const withdrawTotal = document.getElementById("withdraw-total");
-    const withdrawTotalText = withdrawTotal.innerText;
-    const previousWithdraw = parseFloat(withdrawTotalText);
-    withdrawTotal.innerText = previousWithdraw + withdrawAmount;
+    // const withdrawTotal = document.getElementById("withdraw-total");
+    // const withdrawTotalText = withdrawTotal.innerText;
+    // const previousWithdraw = parseFloat(withdrawTotalText);
+
+    // withdrawTotal.innerText = previousWithdraw + withdrawAmount;
+    updateTotalField("withdraw-total", withdrawAmount);
     // update balance //
     const balanceTotal = document.getElementById("balance-total");
     const balanceTotalText = balanceTotal.innerText;
